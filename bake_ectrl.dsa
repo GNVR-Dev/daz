@@ -8,6 +8,13 @@
 
 	//Read more: https://inu-games.com/2018/02/27/export-all-ectrl-as-animation-daz3d-to-ue4/
 	
+	//CAUTION!!!!
+	//If you're following the tutorial above AND using this version of the script DO NOT delete Pose_0
+	//This version will print out a reference pose name for Pose_0 instead
+	//In the Asset Details tab of the Pose Asset check "Additive" and set the Base Pose to this refence pose.
+	//This will allow you to use these animations for multiple character while keeping each character's unigue proportions
+	//CAUTION!!!!
+	
 	//For exporting set corresponding morphs to "ignore"
 	//For example, if you are baking eCTRL ignore them in the export rules,
 	//otherwise daz will export them as morphTargets and not as bone values.
@@ -17,7 +24,7 @@
 	//PARAMETERS. You can change those values:
 
 	//regex to select properties to bake
-	var sPropertyNameRegexp = new RegExp( "eCTRL" );	
+	var PropertiesToBake = "eCTRL" ;	
 	
 	//prefix to put in front of the output
 	var sOutputPrefix="pose_";
@@ -231,11 +238,14 @@
 	
 	var tpk  = Scene.getTimeStep();
 	var aProperties = getElementProperties( oNode, true, true );		
-	
+	var sPropertyNameRegexp = new RegExp(PropertiesToBake);	
 	var oProperty;
 	var aValues = [ ];
 	var key = 1;
-	
+
+	// print out Reference Pose for first keyframe name
+	print (sOutputPrefix+PropertiesToBake+"_Reference_Pose");
+		
 	//animate one property per frame
 	for( var i = 0; i < aProperties.length; i += 1 ){	
 		oProperty = aProperties[ i ];
