@@ -4,13 +4,12 @@ It can be easily changed to bake eCTRL (Face Poses), pCTRL (Body Poses), or seve
 
 The following instructions will walk you through:
 
-Transferring a base character mesh into Unreal Engine
-
-1. Opening the Daz Script IDE Window
-2. Baking poses to the timeline
-3. Transferring the animations to Unreal Engine via the Daz to Unreal Bridge
-4. Creating Pose Assets from the Animations
-5. Setting up the Animation Blueprint
+1. Transferring a base character mesh into Unreal Engine
+2. Opening the Daz Script IDE Window
+3. Baking poses to the timeline
+4. Transferring the animations to Unreal Engine via the Daz to Unreal Bridge
+5. Creating Pose Assets from the Animations
+6. Setting up the Animation Blueprint
 
 Export Base Character:
 
@@ -198,7 +197,7 @@ Change the Custom Curve from None to the Curve you just created
 
 ![Imgur](https://i.imgur.com/IXpg6FM.png)
 
-You should now be able to change the value of the BrowInner variable and see the brows go up a down from -1 to 1
+You should now be able to change the value of the BrowInner variable and see the brows go up and down from -1 to 1
 
 Using the pose assets and animation blueprint for multiple characters:
 
